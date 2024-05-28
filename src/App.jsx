@@ -5,6 +5,7 @@ import Projects from './pages/Projects';   // Ensure correct import path for Pro
 import Contact from './pages/Contact';     // Ensure correct import path for Contact
 import About from './pages/About';         // Ensure correct import path for About
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { Footer } from './components';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/about' element={<About />} />
         </Routes>
+        <Footer/>
       </Router>
     </div>
   );
