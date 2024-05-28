@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Freeman&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+background-color: #060608;
+font-family: "Freeman", sans-serif;
+width: 100%;
+overflow-x: hidden;
+scroll-behavior: smooth;
+}
+*,*::before,*::after{
+ box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  
+
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.button-glow {
+  position: relative;
+  background: #F6F7D3;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  padding: 1rem 3rem;
+  transition: 0.2s;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button-glow:hover {
+  letter-spacing: 0.2rem;
+  padding: 1.1rem 3.1rem;
+  background: var(--clr);
+  color: #fff;
+  /* box-shadow: 0 0 35px var(--clr); */
+  animation: box 3s infinite;
+}
+
+.button-glow::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background:  rgba(255, 191, 26, 0.8);;
+  border-radius: 10px;
+}
+
+.button-glow span {
+  position: relative;
+  z-index: 1;
+}
+.button-glow i {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.button-glow i::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 80%;
+  top: -2px;
+  border: 2px solid var(--clr);
+  background: #272822;
+  transition: 0.2s;
+}
+
+.button-glow:hover i::before {
+  width: 15px;
+  left: 20%;
+  animation: move 3s infinite;
+}
+
+.button-glow i::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 20%;
+  bottom: -2px;
+  border: 2px solid var(--clr);
+  background: #272822;
+  transition: 0.2s;
+}
+
+.button-glow:hover i::after {
+  width: 15px;
+  left: 80%;
+  animation: move 3s infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes box {
+  0% {
+    box-shadow: #27272c;
+  }
+  50% {
+    box-shadow: 0 0 25px var(--clr);
+  }
+  100% {
+    box-shadow: #27272c;
+  }
+}

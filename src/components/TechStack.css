@@ -1,0 +1,133 @@
+.tech-stack {
+    padding: 20px;
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tech-stack-title {
+    color: #fff;
+    font-size: 50px;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tech-stack-title::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #333;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
+  }
+  
+  .tech-stack-title.wavy-underline::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .tech-stack-cards {
+    display: flex;
+    width: 70%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .tech-stack-card {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 9rem;
+    width: 9rem;
+    border: 2px solid;
+    border-radius: 50%;
+    padding: 20px;
+    margin: 10px;
+    width: 150px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .tech-stack-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* src/TechStack.css */
+.tech-stack {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .tech-stack-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .tech-stack-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .tech-stack-card {
+    position: relative;
+ 
+   
+    justify-content: space-around;
+    border: 2px solid var(--color);
+ 
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .tech-stack-card:hover {
+    transform: scale(1.1);
+  }
+  
+  .tech-stack-icon {
+    z-index: 1;
+    color: var(--color);
+  }
+  
+  .tech-stack-card::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color);
+    transition: bottom 0.5s;
+    z-index: 0;
+  }
+  
+  .tech-stack-card:hover::before {
+    bottom: 0;
+  }
+  
+  .tech-stack-card:hover .tech-stack-icon {
+    color: #fff;
+  }
+
+
+.tech-stack-card:hover h5{
+    color: #fff;
+}
+

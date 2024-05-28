@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Freeman&family=Lobster&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.navbar {
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.8rem 2rem;
+    
+    
+    z-index: 1000;
+    transition: background-color 0.7s ease;
+  }
+
+  .navbar.scrolled {
+    background-color: #333;
+   /* Change to your desired background color */
+  }
+
+  .navbar a {
+    color: #fcfefe;
+    font-weight: 500;
+    font-size: 1.1rem;
+
+  }
+  .right-nav {
+    margin-right: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .toggle {
+    cursor: pointer;
+    display: none;
+  }
+  
+
+  
+  @media screen and (max-width: 768px) {
+    .toggle {
+      display: block;
+      color: #fce38a;
+    }
+  .right-nav {
+transform: translateY(-300%);
+overflow: hidden;
+transition: transform 0.7s ease-in-out;
+  }
+
+  .vertical {
+transform: translateY(0);
+    position: absolute;
+    background: #000;
+    flex-direction: column;
+    padding: 1rem 0;
+    width: 100%;
+    color: #fff;
+    top: 4.5rem;
+    left: 0;
+
+    z-index: 1000;
+  }
+  }
+  
+  .active {
+   
+    background-color:#FFBF1A;
+    padding: 0.3rem 1rem;
+    border-radius: 1.5rem;
+    border: 3px solid #fff;
+  }
+
+  .logo {
+    font-family: "Lobster", sans-serif;
+    font-size: 1.3rem;
+   width: 100%;
+    color: #FFBF1A;
+  }
+
+  .logo_span {
+    font-size: 0.9rem;
+    color: #fcfefe;
+  }
+
+/* Variables */
+:root {
+  --cross-fade-border-width: 2px;
+  --cross-fade-border-color: black;
+  --sec-cross-fade-border-color: black;
+  --cross-fade-button-padding: 16px 28px;
+  --cross-fade-text-color: black;
+  --sec-cross-fade-text-color: white;
+  --cross-fade-border-radius: 0px;
+  --cross-fade-background: white;
+  --sec-cross-fade-background: #666;
+  --cross-fade-transition-time: 0.75s;
+}
+
+/* Cross-fade button styles */
+.cross-fade {
+  display: inline-block;
+  padding: 6px 15px;
+ 
+  text-align: center;
+  text-decoration: none;
+  color: var(--cross-fade-text-color);
+  position: relative;
+  overflow: hidden;
+  transition: color var(--cross-fade-transition-time) ease-in-out;
+  z-index: 1;
+  border-radius: 2rem;
+  
+}
+
+/* Pseudo-elements for cross-fade effect */
+.cross-fade:before,
+.cross-fade:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -25%;
+  width: 150%;
+  height: 100%;
+  background: #fce38a; /* Adjusted to a static RGBA color */
+  transition: transform var(--cross-fade-transition-time) ease-in-out;
+  z-index: -1;
+}
+
+/* Animation for before pseudo-element */
+.cross-fade:before {
+  transform: translate3d(100%, 0, 0) skew(20deg);
+  transform-origin: 0 0;
+}
+
+/* Animation for after pseudo-element */
+.cross-fade:after {
+  transform: translate3d(-100%, 0, 0) skew(20deg);
+  transform-origin: 100% 100%;
+}
+
+/* Hover effect */
+.cross-fade:hover {
+  color: var(--sec-cross-fade-text-color);
+}
+
+/* Hover effect for pseudo-elements */
+.cross-fade:hover:before,
+.cross-fade:hover:after {
+  transform: translate3d(0, 0, 0) skew(20deg);
+}

@@ -1,0 +1,21 @@
+.scroll-up-btn {
+    position: fixed;
+    height: 3rem;
+    width: 3rem;
+    bottom: 20px;
+    right: 20px;
+    background-color: #d5d5d5;
+    color: #FFBF1A;
+    border: 3px solid #FFBF1A;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.3s;
+    font-size: 2rem;
+  }
+  
+  .scroll-up-btn:hover {
+    opacity: 0.8;
+  }
+  

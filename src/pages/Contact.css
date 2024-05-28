@@ -1,0 +1,91 @@
+.contact {
+ 
+    text-align: center;
+  
+    background-color: #F5F7F8;
+   
+    padding: 2rem 2rem;
+    margin: 0px 4rem;
+    border-radius: 1rem;
+ margin-bottom: 10rem;
+  }
+  
+  @media screen and (max-width: 498px) {
+    .contact {
+     
+      padding: 2rem 2rem;
+      margin: 0px 0rem;
+      border-radius: 0rem;
+    }
+    
+  }
+  
+  .contact h2 {
+    font-size: 2.5rem;
+    font-family: "Pacifico", cursive;
+    margin-bottom: 2rem;
+    color: #000;
+  }
+  @media (max-width: 440px) {
+    .contact h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .contact form {
+    max-width: 500px;
+    margin: 0 auto;
+  
+  }
+  
+  .contact input,
+  .contact textarea,
+  .contact button {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .contact textarea {
+    resize: vertical;
+    height: 10rem;
+  }
+  
+  .contact button {
+    background-color: #1b1b1b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact button:hover {
+    background-color: #2f2f2f;
+  }
+
+  @media  screen and (max-width:497px) {
+    .contact {
+      margin: 1rem;
+        margin-bottom: 7rem;
+        
+        
+    }
+    
+  }
+.success {
+  color: #1fc421;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+.error {
+  color: #ff0000;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+

@@ -1,0 +1,72 @@
+/* src/Footer.css */
+.footer {
+    background-color: #111;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .footer-icons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-icon {
+    color: #fff;
+    font-size: 2rem;
+    transition: transform 0.3s, color 0.3s;
+    position: relative;
+  }
+  
+  .footer-icon::before, .footer-icon::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: currentColor;
+    transition: 0.4s;
+  }
+  
+  .footer-icon::before {
+    top: 0;
+    left: 50%;
+  }
+  
+  .footer-icon::after {
+    bottom: 0;
+    right: 50%;
+  }
+  
+  .footer-icon:hover::before {
+    left: 0;
+    width: 100%;
+  }
+  
+  .footer-icon:hover::after {
+    right: 0;
+    width: 100%;
+  }
+  
+  .footer-icon:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Specific hover colors */
+  .footer-icon.facebook:hover {
+    color: #3b5998; /* Facebook blue */
+  }
+  
+  .footer-icon.github:hover {
+    color: #333; /* GitHub black */
+  }
+  
+  .footer-icon.linkedin:hover {
+    color: #0077b5; /* LinkedIn blue */
+  }
+  
+  .footer-icon.google:hover {
+    color: #db4437; /* Google red */
+  }
+  

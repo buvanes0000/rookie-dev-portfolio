@@ -1,0 +1,92 @@
+/* src/Services.css */
+.service-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .service-card {
+    position: relative;
+    background: #fff;
+    border: 2px solid #ffbf1a;
+    border-radius: 10px;
+    width: 250px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .service-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .icon-container {
+    font-size: 50px;
+    color: #ffbf1a;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+  
+ .service-card p {
+    font-size: 1rem;
+    color: #555 ;
+  }
+  
+  /* Hover effect: fill the card like filling a bottle */
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 191, 26, 0.8);
+    z-index: -1;
+    transition: top 0.5s;
+  }
+  
+  .service-card:hover::before {
+    top: 0;
+  }
+.service-icon{
+  font-size: 50px;
+  color: #ffbf1a;
+
+}
+.service-card:hover h3{
+  color: #fff;
+}
+.service-card:hover p{
+  color: #fff;
+}
+
+.service-card:hover .service-icon{
+  animation: jump 1s linear infinite;
+  color: #fff;
+}
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
