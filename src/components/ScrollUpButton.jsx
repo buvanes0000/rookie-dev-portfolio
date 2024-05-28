@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ScrollUpButton.css';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
 
 const ScrollUpButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -34,7 +32,7 @@ const ScrollUpButton = () => {
     <div>
       {isVisible && (
         <button className="scroll-up-btn" onClick={scrollToTop}>
-    <i class="fas fa-arrow-up" style={{fontSize:"1.5rem",position:"absolute", marginTop:"-0.75rem",marginLeft:"-0.5rem"}}></i>
+    <i className="fas fa-arrow-up" style={{fontSize:"1.5rem",position:"absolute", marginTop:"-0.75rem",marginLeft:"-0.5rem"}}></i>
 
         </button>
       )}
