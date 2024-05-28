@@ -8,14 +8,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import  Services  from "../components/Services";
 import  TechStack  from "../components/TechStack";
 import  ScrollUpButton  from "../components/ScrollUpButton";
-
 const Home = () => {
   const customHeight = 500; // Change this value to your desired height
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
+    const videoElement = document.querySelector('video');
+    videoElement.muted = isMuted; // Ensure video is muted initially for autoplay
+
     const handleScroll = () => {
-      const videoElement = document.querySelector('video');
       if (window.scrollY > customHeight) {
         videoElement.muted = true;
         setIsMuted(true);
@@ -28,10 +29,23 @@ const Home = () => {
     const debouncedHandleScroll = debounce(handleScroll, 100);
     window.addEventListener('scroll', debouncedHandleScroll);
 
+    // Play the video on user interaction if it hasn't started
+    const handleUserInteraction = () => {
+      if (videoElement.paused) {
+        videoElement.play();
+      }
+    };
+
+    // Add event listeners to ensure video plays on user interaction
+    document.addEventListener('click', handleUserInteraction);
+    document.addEventListener('touchstart', handleUserInteraction);
+
     return () => {
       window.removeEventListener('scroll', debouncedHandleScroll);
+      document.removeEventListener('click', handleUserInteraction);
+      document.removeEventListener('touchstart', handleUserInteraction);
     };
-  }, []);
+  }, [isMuted]);
 
   const toggleMute = () => {
     const videoElement = document.querySelector('video');
@@ -43,7 +57,13 @@ const Home = () => {
     <div className='home'>
       <section id='hero'>  
         <div className="container">
-          <video src={video} autoPlay loop muted={isMuted}></video>
+          <video 
+            src={video} 
+            autoPlay 
+            loop 
+            muted={isMuted} 
+            playsInline // Added playsInline attribute
+          ></video>
 
           <div className="typewriter" style={{ marginTop: "12rem" }}>I am</div>
           <p style={{ fontSize: "2rem", marginBottom: "15rem" }}>Learning Can't Get Enough</p>
