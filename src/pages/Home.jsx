@@ -1,44 +1,37 @@
 import React, { useEffect, useState } from 'react';
-import video from "../videos/Lamp flicker - a short horror film. Free stock footage with a twist. (online-video-cutter.com).mp4";
+import video from "../assets/lamp.mp4";
 import "./home.css";
 import '@fortawesome/fontawesome-free/css/all.css';
 import { faVolumeMute, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Footer, ScrollUpButton, TechStack, Timeline } from "../components";
-import { Services } from "../components";
+import  Services  from "../components/Services";
+import  TechStack  from "../components/TechStack";
+import  ScrollUpButton  from "../components/ScrollUpButton";
 
 const Home = () => {
-  // Define your custom height value (in pixels)
   const customHeight = 500; // Change this value to your desired height
-
   const [isMuted, setIsMuted] = useState(false);
 
   useEffect(() => {
-    // Function to handle scroll event
     const handleScroll = () => {
       const videoElement = document.querySelector('video');
-
-      // Check if the user has scrolled past the custom height
       if (window.scrollY > customHeight) {
-        // Mute the video
         videoElement.muted = true;
-        setIsMuted(true); // Update state to reflect mute status
+        setIsMuted(true);
       } else {
-        // Unmute the video
         videoElement.muted = false;
-        setIsMuted(false); // Update state to reflect unmute status
+        setIsMuted(false);
       }
     };
 
-    // Attach the scroll event listener
-    window.addEventListener('scroll', handleScroll);
+    const debouncedHandleScroll = debounce(handleScroll, 100);
+    window.addEventListener('scroll', debouncedHandleScroll);
 
-    // Cleanup function to remove the event listener when component unmounts
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', debouncedHandleScroll);
     };
-  }, [customHeight]); // Include customHeight in the dependency array to watch for changes
+  }, []);
 
   const toggleMute = () => {
     const videoElement = document.querySelector('video');
@@ -48,12 +41,12 @@ const Home = () => {
 
   return (
     <div className='home'>
-      <section id='hero'>	
+      <section id='hero'>  
         <div className="container">
           <video src={video} autoPlay loop muted={isMuted}></video>
 
-          <div className="typewriter" style={{marginTop:"12rem"}}>I am  </div>
-          <p style={{fontSize:"2rem",marginBottom:"15rem"}}>Learning Can't Get Enough</p>
+          <div className="typewriter" style={{ marginTop: "12rem" }}>I am</div>
+          <p style={{ fontSize: "2rem", marginBottom: "15rem" }}>Learning Can't Get Enough</p>
           <button 
             onClick={toggleMute} 
             style={{
@@ -70,9 +63,21 @@ const Home = () => {
             }}
             aria-label={isMuted ? 'Unmute' : 'Mute'}
           >
-            <FontAwesomeIcon className='mute-button' style={{fontSize:"1.1rem",color:"#ffbf1a",padding:"0.5rem",border:"2px solid #ffbf1a",borderRadius:"50%",backgroundColor:"#fff",fontWeight:"bolder"}} icon={isMuted ? faVolumeMute : faVolumeUp} />
+            <FontAwesomeIcon 
+              className='mute-button' 
+              style={{
+                fontSize: "1.1rem",
+                color: "#ffbf1a",
+                padding: "0.5rem",
+                border: "2px solid #ffbf1a",
+                borderRadius: "50%",
+                backgroundColor: "#fff",
+                fontWeight: "bolder"
+              }} 
+              icon={isMuted ? faVolumeMute : faVolumeUp} 
+            />
           </button>
-          <div className="social-buttons" style={{position:"absolute",marginTop:"25rem"}}>
+          <div className="social-buttons" style={{ position: "absolute", marginTop: "25rem" }}>
             <a href="https://www.facebook.com/profile.php?id=61558372202884" className="fb social-button social-button--facebook" aria-label="Facebook">
               <i className="fab fa-facebook-f"></i>
             </a>
@@ -87,12 +92,21 @@ const Home = () => {
       </section>
       <Services />
       <TechStack />
-  
-
       <ScrollUpButton />
     </div>
   );
 };
 
-export default Home;
+const debounce = (func, wait) => {
+  let timeout;
+  return function(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+};
 
+export default Home;
