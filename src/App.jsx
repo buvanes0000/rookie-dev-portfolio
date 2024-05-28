@@ -5,7 +5,7 @@ import Projects from './pages/Projects';   // Ensure correct import path for Pro
 import Contact from './pages/Contact';     // Ensure correct import path for Contact
 import About from './pages/About';         // Ensure correct import path for About
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import { Footer } from './components/Footer';
+import  Footer  from './components/Footer';
 
 function App() {
   return (
