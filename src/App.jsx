@@ -1,7 +1,10 @@
 import './App.css';
-import { Navbar } from './components';
-import { Home, Projects, Contact, About } from './pages';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';  // Ensure correct import path for Navbar
+import Home from './pages/Home';           // Ensure correct import path for Home
+import Projects from './pages/Projects';   // Ensure correct import path for Projects
+import Contact from './pages/Contact';     // Ensure correct import path for Contact
+import About from './pages/About';         // Ensure correct import path for About
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
