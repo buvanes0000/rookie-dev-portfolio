@@ -26,7 +26,7 @@ export default function About() {
             <a href="https://www.facebook.com/profile.php?id=61558372202884" target="_blank"><li><FontAwesomeIcon icon={faFacebookF} /></li></a>
             <a href="https://www.linkedin.com/in/buvaneswaran-v-07013518b" target="_blank"><li><FontAwesomeIcon icon={faLinkedin} /></li></a>
             <a href="https://discord.gg/buvanes#1234" target="_blank"><li><FontAwesomeIcon icon={faDiscord} /></li></a>
-            <a href="https://github.com/buvanes0000" target="_blank"><li><FontAwesomeIcon icon={faGithub} /></li></a>
+           
           </ul>
         </div>
       </div>

@@ -1,72 +1,74 @@
-/* src/Footer.css */
+/* Footer.css */
+
 .footer {
-    background-color: #111;
-    padding: 20px 0;
-    display: flex;
-    justify-content: center;
+  background: linear-gradient(to right, #c6e9d9, #3bcb8b);
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* Ensure the footer is above the pseudo-element */
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, transparent 10%);
+  background-size: 50px 50px;
+  animation: animate 5s linear infinite;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: -1; /* Ensure the pseudo-element is below the footer content */
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(-50%) translateY(-50%);
+  }
+  100% {
+    transform: translateX(-48%) translateY(-48%);
+  }
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  font-size: 30px;
+  transition: transform 0.3s;
+  z-index: 2; /* Ensure icons are above the pseudo-element */
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
     align-items: center;
-  
   }
-  
-  .footer-icons {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .footer-icon {
-    color: #fff;
-    font-size: 2rem;
-    transition: transform 0.3s, color 0.3s;
-    position: relative;
-  }
-  
-  .footer-icon::before, .footer-icon::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    background: currentColor;
-    transition: 0.4s;
-  }
-  
-  .footer-icon::before {
-    top: 0;
-    left: 50%;
-  }
-  
-  .footer-icon::after {
-    bottom: 0;
-    right: 50%;
-  }
-  
-  .footer-icon:hover::before {
-    left: 0;
-    width: 100%;
-  }
-  
-  .footer-icon:hover::after {
-    right: 0;
-    width: 100%;
-  }
-  
-  .footer-icon:hover {
-    transform: scale(1.2);
-  }
-  
-  /* Specific hover colors */
-  .footer-icon.facebook:hover {
-    color: #3b5998; /* Facebook blue */
-  }
-  
-  .footer-icon.github:hover {
-    color: #333; /* GitHub black */
-  }
-  
-  .footer-icon.linkedin:hover {
-    color: #0077b5; /* LinkedIn blue */
-  }
-  
-  .footer-icon.google:hover {
-    color: #db4437; /* Google red */
-  }
-  
+}

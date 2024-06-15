@@ -1,111 +1,68 @@
-import React, { useEffect, useState } from 'react';
-import video from "../assets/lamp.mp4";
-import "./home.css";
+import React, { useState } from 'react';
+import './home.css';
 import '@fortawesome/fontawesome-free/css/all.css';
-import { faVolumeMute, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-import  Services  from "../components/Services";
-import  TechStack  from "../components/TechStack";
-import  ScrollUpButton  from "../components/ScrollUpButton";
+import Lottie from 'react-lottie';
+import animationData from '../heroanimation.json';
+import Services from "../components/Services";
+import TechStack from "../components/TechStack";
+import ScrollUpButton from "../components/ScrollUpButton";
+import { Typewriter } from 'react-simple-typewriter'; // Import Typewriter from react-simple-typewriter
+import { Link } from 'react-router-dom';
+
 const Home = () => {
-  const customHeight = 500; // Change this value to your desired height
   const [isMuted, setIsMuted] = useState(true);
 
-  useEffect(() => {
-    const videoElement = document.querySelector('video');
-    videoElement.muted = isMuted; // Ensure video is muted initially for autoplay
-
-    const handleScroll = () => {
-      if (window.scrollY > customHeight) {
-        videoElement.muted = true;
-        setIsMuted(true);
-      } else {
-        videoElement.muted = false;
-        setIsMuted(false);
-      }
-    };
-
-    const debouncedHandleScroll = debounce(handleScroll, 100);
-    window.addEventListener('scroll', debouncedHandleScroll);
-
-    // Play the video on user interaction if it hasn't started
-    const handleUserInteraction = () => {
-      if (videoElement.paused) {
-        videoElement.play();
-      }
-    };
-
-    // Add event listeners to ensure video plays on user interaction
-    document.addEventListener('click', handleUserInteraction);
-    document.addEventListener('touchstart', handleUserInteraction);
-
-    return () => {
-      window.removeEventListener('scroll', debouncedHandleScroll);
-      document.removeEventListener('click', handleUserInteraction);
-      document.removeEventListener('touchstart', handleUserInteraction);
-    };
-  }, [isMuted]);
-
   const toggleMute = () => {
-    const videoElement = document.querySelector('video');
-    videoElement.muted = !videoElement.muted;
-    setIsMuted(videoElement.muted);
+    setIsMuted(!isMuted);
+  };
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
   };
 
   return (
     <div className='home'>
-      <section id='hero'>  
+      <section id='hero'>
         <div className="container">
-          <video 
-            src={video} 
-            autoPlay 
-            loop 
-            muted={isMuted} 
-            playsInline // Added playsInline attribute
-          ></video>
+          <div className="content">
+            <h1>
+              <span className="static-text" style={{fontFamily:"Pacifico, cursive"}}>I am </span>
+              <div className="typewriter-container">
+                <Typewriter
+                  words={[" Buvanes", "Web Developer", " Freelancer"]}
+                  loop={true}
+                  cursor
+                  cursorStyle='|'
+                  typeSpeed={100}
+                  deleteSpeed={80}
+                  delaySpeed={1000}
+                />
+              </div>
+            </h1>
 
-          <div className="typewriter" style={{ marginTop: "12rem" }}>I am</div>
-          <p style={{ fontSize: "2rem", marginBottom: "15rem" }}>Learning Can't Get Enough</p>
-          <button 
-            onClick={toggleMute} 
-            style={{
-              position: "absolute", 
-              top: "1rem", 
-              right: "1rem", 
-              padding: "0.5rem 1rem",
-              zIndex: 1000,
-              cursor: "pointer",
-              background: "none",
-              border: "none",
-              fontSize: "1.5rem",
-              color: "#fff"
-            }}
-            aria-label={isMuted ? 'Unmute' : 'Mute'}
-          >
-            <FontAwesomeIcon 
-              className='mute-button' 
-              style={{
-                fontSize: "1.1rem",
-                color: "#ffbf1a",
-                padding: "0.5rem",
-                border: "2px solid #ffbf1a",
-                borderRadius: "50%",
-                backgroundColor: "#fff",
-                fontWeight: "bolder"
-              }} 
-              icon={isMuted ? faVolumeMute : faVolumeUp} 
-            />
-          </button>
-          <div className="social-buttons" style={{ position: "absolute", marginTop: "25rem" }}>
+            <p>Learning Can't Get Enough</p>
+            <Link to="./about"><button className="button-48" role="button"><span className="text">Meet Buvanes</span></button></Link>
+          </div>
+          <div className="animation">
+            <Lottie options={defaultOptions} height={400} width={400} />
+          </div>
+          <div className="social-buttons">
             <a href="https://www.facebook.com/profile.php?id=61558372202884" className="fb social-button social-button--facebook" aria-label="Facebook">
               <i className="fab fa-facebook-f"></i>
             </a>
             <a href="https://www.linkedin.com/in/buvaneswaran-v-07013518b" className="ln social-button social-button--linkedin" aria-label="LinkedIn">
               <i className="fab fa-linkedin-in"></i>
             </a>
-            <a href="https://github.com/buvanes0000" className="gh social-button social-button--github" aria-label="GitHub">
-              <i className="fab fa-github"></i>
+            <a href="buvanesh454@gmail.com" className="email social-button social-button--email" aria-label="Email">
+              <FontAwesomeIcon icon={faEnvelope} />
             </a>
           </div>
         </div>
@@ -117,16 +74,5 @@ const Home = () => {
   );
 };
 
-const debounce = (func, wait) => {
-  let timeout;
-  return function(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-};
-
 export default Home;
+

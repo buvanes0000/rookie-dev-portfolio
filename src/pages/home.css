@@ -1,483 +1,214 @@
+.home {
+  font-family: Arial, sans-serif;
+}
 
-
-img {
-    display: block;
+a {
+  color: #0c4058;
 }
 
 #hero {
-    height: 100vh;
-    color: white;
-    position: relative;
-    
-}
-
-#hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-
-    z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #f9f9f9;
+  position: relative;
+  text-align: center;
+  height: 90vh;
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
-    height: 100%;
-    padding: 4rem 0;
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: auto;
+  width: 100%;
+  position: relative;
+}
+
+
+.content h1 {
+  width: 100%;
+  font-size: 3rem;
+  margin-bottom: 20px;
+
+  display: inline-block;
+}
+
+.content p {
+  font-size: 1.25rem;
+  margin-top: -0.7rem;
+
+  color: #666;
+  width: 100%;
+}
+
+.buttons {
+
+  margin-top: 20px;
+}
+.content {
+  width: 100%;
+}
+
+
+
+
+
+
+.social-buttons {
+position: absolute;
+ left: 45rem;
+ top: 25rem;
+  display: flex;
+  gap: 15px;
+
+
+
+}
+
+.social-button {
+  font-size: 1.5rem;
+
+  color: #0c4058;
+  transition: transform 0.5s;
+  
+}
+
+.social-button:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 1100px) {
+  #hero {
     flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-}
-
-
-
-
-h1 {
-    font-size: 4.875rem;
-    font-weight: 700;
-
-    line-height: 1.2;
-  
-}
-
-@media screen and (max-width: 568px) {
-  h1 {
-    font-size: 2.875rem;
-  }
-}
-
-h1 span {
- width: 100%;
-}
-
-/* Air */
-video {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2;
-}
-
-
-
-
-@keyframes cursor {
-    to {
-        border-left: 1px solid #ac0e0e;
-    }
-}
-
-.typewriter {
-    font-size:200%;
-    font-size:5rem;
-  }
-  @media screen and (max-width: 568px) {
-    .typewriter {
-      font-size: 2.875rem;
-    }
-  }
-  .typewriter:after {
-    content:'';
-    color:#FFBF1A;
-    animation:write 10s infinite;
-    animation-fill-mode: forwards;
-  }
-  
-  @keyframes write {
-    1% {
-      content:'D';
-    }
-    2% {
-      content:'De';
-    }
-    3% {
-      content:'Des';
-    }
-    4% {
-      content:'Desi';
-    }
-    5% {
-      content:'Desig';
-    }
-    6% {
-      content:'Design';
-    }
-    7% {
-      content:'Designe';
-    }
-    8% {
-      content:'Designer';
-    }
-    
-    14% {
-      content:'Designer';
-    }
-    14.5% {
-      content:'Designe';
-    }
-    15% {
-      content:'Design';
-    }
-    15.5% {
-      content:'Desig';
-    }
-    16% {
-      content:'Desi';
-    }
-    16.5% {
-      content:'Des';
-    }
-    17% {
-      content:'De';
-    }
-    17.5% {
-      content:'D';
-    }
-    18% {
-      content:'';
-    }
-    
-    20% {
-      content:'D';
-    }
-    21% {
-      content:'De';
-    }
-    22% {
-      content:'Dev';
-    }
-    23% {
-      content:'Deve';
-    }
-    24% {
-      content:'Devel';
-    }
-    25% {
-      content:'Develo';
-    }
-    26% {
-      content:'Develop';
-    }
-    27% {
-      content:'Develope';
-    }
-    28% {
-      content:'Developer';
-    }
-    
-    34% {
-      content:'Developer';
-    }
-    35.5% {
-      content:'Develope';
-    }
-    36% {
-      content:'Develop';
-    }
-    36.5% {
-      content:'Develo';
-    }
-    37% {
-      content:'Devel';
-    }
-    37.5% {
-      content:'Deve';
-    }
-    38% {
-      content:'Dev';
-    }
-    38.5% {
-      content:'De';
-    }
-    39% {
-      content:'D';
-    }
-    39.5% {
-      content:'';
-    }
-    
-    42% {
-      content:'B';
-    }
-    43% {
-      content:'Bu';
-    }
-    44% {
-      content:'Buv';
-    }
-    45% {
-      content:'Buva';
-    }
-    46% {
-      content:'Buvan';
-    }
-    47% {
-      content:'Buvane';
-      color:#fce38a;
-    }
-    48% {
-        content: "Buvanes";
-    }
-    99% {
-      content:'Buvanes';
-      color:#FFBF1A;;
-    }
-    100% {
-      color:#000;
-      content:'Buvanes';
-    }
-  }
-
-
-
-  /* Variables */
-:root {
-    --social-button-size: 64px;
-    --social-button-icon-size: 0.4;
-    --social-button-background: #fff;
-    --social-button-active-color: #fff;
-    --social-button-transition-time: 0.3s;
-  
-    --social-button-mail: #0072c6;
-    --social-button-facebook: #3b5999;
-    --social-button-linkedin: #0077b5;
-    --social-button-github: #6e5494;
-    --social-button-codepen: #212121;
-    --social-button-steam: #7da10e;
-    --social-button-snapchat: #eec900;
-    --social-button-twitter: #55acee;
-    --social-button-instagram: #e4405f;
-    --social-button-npmjs: #c12127;
-  }
-  
-  /* Social buttons container */
-  .social-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 28px;
-  }
-  
-  /* Social button styles */
-  .social-button {
-    position: relative;
-    display: flex;
-    border: 5px solid #FFBF1A;
-    justify-content: center;
     align-items: center;
-    outline: none;
-    width: var(--social-button-size);
-    height: var(--social-button-size);
-    text-decoration: none;
-    border-radius: 100%;
-    background: var(--social-button-background);
+    justify-content: center;
     text-align: center;
-  
   }
-.fb {
-    animation: jump1 5s linear infinite;
+
+  .container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .content{
+    width: 100%;
+  }
+
+  .content h1 {
+    font-size: 2rem;
+  }
+
+  .content p {
+    font-size: 1rem;
+  }
+
+  .social-buttons {
+    position: static;
+    margin-top: 20px;
+  }
 }
 
-  @keyframes jump1 {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    70% {
-      transform: translateY(10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
 
-  .ln {
-    animation: jump2 5s linear infinite;
-  }
 
-  @keyframes jump2 {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(10px);
-    }
+.typewriter-container span {
+ 
 
-    70% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  .gh {
-    animation: jump3 5s linear infinite;
-  }
-  @keyframes jump3 {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    70% {
-      transform: translateY(10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
+  font-family: 'Courier New', Courier, monospace; /* Example font family */
 
-  /* Social button pseudo-element */
-  .social-button::after {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: 50%;
-    display: block;
-    width: 0;
-    height: 0;
-    border-radius: 100%;
-    transition: width var(--social-button-transition-time), height var(--social-button-transition-time);
-  }
-  
-  /* Hover and focus styles for social buttons */
-  .social-button:focus,
-  .social-button:hover {
-    color: var(--social-button-active-color);
-  }
-  
-  .social-button:focus::after,
-  .social-button:hover::after {
-    width: calc(100% + 2px);
-    height: calc(100% + 2px);
-    margin-left: calc(-50% - 1px);
-  }
-  
-  /* Icon styles for social buttons */
-  .social-button i,
-  .social-button svg {
-    position: relative;
-    z-index: 1;
-    transition: var(--social-button-transition-time);
-  }
-  
-  .social-button i {
-    font-size: calc(var(--social-button-size) * var(--social-button-icon-size));
-  }
-  
-  .social-button svg {
-    height: calc(var(--social-button-icon-size) * 100%);
-    width: calc(var(--social-button-icon-size) * 100%);
-  }
-  
-  /* Individual social button colors */
-  .social-button--mail {
-    color: var(--social-button-mail);
-  }
-  
-  .social-button--mail::after {
-    background: var(--social-button-mail);
-  }
-  
-  .social-button--facebook {
-    color: var(--social-button-facebook);
-  }
-  
-  .social-button--facebook::after {
-    background: var(--social-button-facebook);
-  }
-  
-  .social-button--linkedin {
-    color: var(--social-button-linkedin);
-  }
-  
-  .social-button--linkedin::after {
-    background: var(--social-button-linkedin);
-  }
-  
-  .social-button--github {
-    color: var(--social-button-github);
-  }
-  
-  .social-button--github::after {
-    background: var(--social-button-github);
-  }
-  
-  .social-button--codepen {
-    color: var(--social-button-codepen);
-  }
-  
-  .social-button--codepen::after {
-    background: var(--social-button-codepen);
-  }
-  
-  .social-button--steam {
-    color: var(--social-button-steam);
-  }
-  
-  .social-button--steam::after {
-    background: var(--social-button-steam);
-  }
-  
-  .social-button--snapchat {
-    color: var(--social-button-snapchat);
-  }
-  
-  .social-button--snapchat::after {
-    background: var(--social-button-snapchat);
-  }
-  
-  .social-button--twitter {
-    color: var(--social-button-twitter);
-  }
-  
-  .social-button--twitter::after {
-    background: var(--social-button-twitter);
-  }
-  
-  .social-button--instagram {
-    color: var(--social-button-instagram);
-  }
-  
-  .social-button--instagram::after {
-    background: var(--social-button-instagram);
-  }
-  
-  .social-button--npmjs {
-    color: var(--social-button-npmjs);
-  }
-  
-  .social-button--npmjs::after {
-    background: var(--social-button-npmjs);
-  }
-  
-  .mute-button{
-    animation: mute 1s linear infinite, glow 1s linear infinite;
-  }
+ color: #3bcb8b;
+}
 
-  @keyframes mute {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  @keyframes glow {
-    0% {
-      box-shadow: 0 0 5px #ffbf1a, 0 0 10px #ffbf1a, 0 0 15px #ffbf1a, 0 0 20px #ffbf1a, 0 0 25px #ffbf1a;
-    }
-    100% {
-      box-shadow: 0 0 5px #ffbf1a, 0 0 10px #ffbf1a, 0 0 15px #ffbf1a, 0 0 20px #ffbf1a, 0 0 25px #ffbf1a;
-    }
+
+
+
+
+
+
+
+
+/* CSS */
+.button-48 {
+  appearance: none;
+  background-color: rgb(177, 231, 207);
+  border-width: 0;
+  box-sizing: border-box;
+
+  cursor: pointer;
+  display: inline-block;
+  font-family: Clarkson,Helvetica,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 1.5em 2.2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  border-radius: 10px;
+  border: 1px solid #0c4058;
+}
+
+.button-48:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color:#3bcb8b;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+  border-radius: 10px;
+ 
+}
+
+.button-48:hover:before {
+  color: #FFFFFF;
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.button-48:after {
+  background-color: #FFFFFF;
+}
+
+.button-48 span {
+  z-index: 1;
+  position: relative;
+}
+ .button-48:hover a {
+  color: #FFFFFF;
+}
+
+.button-48:hover {
+  border-color: #fff;
+}
+
+
+
+
+@media screen and (max-width:460px) {
+
+
+  .animation {
+    transform: scale(0.7);
   }
   
+}

@@ -8,7 +8,7 @@
   position: absolute;
   width: 6px;
   height: 0;
-  background: #fff;
+  background: #044454;
   top: 0;
   left: 50%;
   margin-left: -3px;
@@ -44,7 +44,7 @@
 
 .text-box {
   position: relative;
-  background-color: #fff;
+  background-color: #edffec;
   padding: 20px 30px;
   border-radius: 10px;
 }
@@ -73,12 +73,15 @@
 
 .timelinelogo-containerleft,
 .timelinelogo-containerright {
-  background-color: #fff;
+  background-color: #3bcb8b;
   width: 4rem;
   height: 4rem;
   position: absolute;
   border-radius: 50%;
   z-index: 1;
+}
+.timeline-heading {
+  font-family: "Pacifico", cursive;
 }
 
 .timelinelogo-containerleft {
@@ -101,8 +104,8 @@
 .text-box small {
   display: inline-block;
   margin-bottom: 15px;
-  font-weight: lighter;
-  color: #888;
+  font-weight: bolder;
+  color: #3bcb8b;
 }
 
 .left-arrow {
@@ -113,7 +116,7 @@
   z-index: 1;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-left: 10px solid #fff;
+  border-left: 10px solid #044454;
   right: -10px;
 }
 
@@ -125,7 +128,7 @@
   z-index: 1;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-right: 10px solid #fff;
+  border-right: 10px solid #044454;
   left: -9px;
 }
 
@@ -160,7 +163,7 @@
     left: 0;
   }
   .left-arrow, .right-arrow {
-    border-right: 15px solid #fff;
+    border-right: 15px solid #044454;
     border-left: 0;
     left: -11px;
   }

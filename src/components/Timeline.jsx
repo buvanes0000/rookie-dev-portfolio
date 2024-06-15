@@ -34,7 +34,7 @@ const Timeline = () => {
 
   return (
     <>
-    <h2 className='timeline-heading' style={{color:"#fff",fontSize:"50px",textAlign:"center"}}>How I become a Developer👇</h2>
+    <h2 className='timeline-heading' style={{fontSize:"50px",textAlign:"center"}}>How I become a Developer👇</h2>
     <div className="timeline">
       <div className="timeline-line" ref={lineRef}></div>
       {[

@@ -1,5 +1,6 @@
 .tech-stack {
     padding: 20px;
+    padding-bottom: 50rem;
 
     text-align: center;
     display: flex;
@@ -8,7 +9,7 @@
   }
   
   .tech-stack-title {
-    color: #fff;
+    font-family: "Pacifico", cursive;
     font-size: 50px;
     margin-bottom: 20px;
     position: relative;
@@ -35,13 +36,15 @@
   
   .tech-stack-cards {
     display: flex;
-    width: 70%;
+    width: 80%;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding-bottom: 10rem;
+    padding-top: 5rem;
   }
   
   .tech-stack-card {
-    background-color: #fff;
+    background-color: #d8e6df;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,6 +59,9 @@
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeIn 1s ease-in-out;
+    position: relative;
+    transform: scale(0.2);
+ 
   }
   
   .tech-stack-card:hover {
@@ -63,11 +69,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
+
   /* src/TechStack.css */
 .tech-stack {
     text-align: center;
@@ -83,12 +85,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+  
   }
   
   .tech-stack-card {
     position: relative;
- 
+
    
     justify-content: space-around;
     border: 2px solid var(--color);
@@ -131,3 +133,46 @@
     color: #fff;
 }
 
+.tech-stack-card:nth-child(odd) {
+  transform: rotateZ(10deg);
+  margin-left: -45px;
+}
+.tech-stack-card:nth-child(even) {
+  transform: rotateZ(-10deg);
+  margin-left: -45px;
+}
+.tech-stack-card:hover {
+  transform: scale(1.1);
+  z-index: 1000;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.tech-description {
+  position: absolute;
+  color: var(--color);
+ top: -3rem;
+  opacity: 1;
+  color: black;
+  z-index: 1000;
+
+}
+.tech-stack-card:hover .tech-description {
+  position: absolute;
+  color: var(--color);
+ 
+  opacity: 1;
+
+}
+
+@media screen and (max-width:640px) {
+
+  .tech-stack-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 2rem;
+  
+  }
+  
+  
+}

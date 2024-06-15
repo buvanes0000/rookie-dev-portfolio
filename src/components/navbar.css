@@ -6,7 +6,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0.8rem 2rem;
+    padding: 0.8rem 8rem;
     
     
     z-index: 1000;
@@ -19,7 +19,7 @@
   }
 
   .navbar a {
-    color: #fcfefe;
+    color: #044454;
     font-weight: 500;
     font-size: 1.1rem;
 
@@ -39,10 +39,19 @@
   
 
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1100px) {
+
+    .navbar {
+  
+    
+      padding: 0.8rem 2rem;
+      
+     
+    }
+
     .toggle {
       display: block;
-      color: #fce38a;
+      color: #3bcb8b;
     }
   .right-nav {
 transform: translateY(-300%);
@@ -53,7 +62,7 @@ transition: transform 0.7s ease-in-out;
   .vertical {
 transform: translateY(0);
     position: absolute;
-    background: #000;
+    background: #c6e9d9;
     flex-direction: column;
     padding: 1rem 0;
     width: 100%;
@@ -67,7 +76,7 @@ transform: translateY(0);
   
   .active {
    
-    background-color:#FFBF1A;
+    background-color:#3bcb8b;
     padding: 0.3rem 1rem;
     border-radius: 1.5rem;
     border: 3px solid #fff;
@@ -77,12 +86,13 @@ transform: translateY(0);
     font-family: "Lobster", sans-serif;
     font-size: 1.3rem;
    width: 100%;
-    color: #FFBF1A;
+    color: #3bcb8b;
   }
 
   .logo_span {
+    margin-left: 0.3rem;
     font-size: 0.9rem;
-    color: #fcfefe;
+    color: #044454;
   }
 
 /* Variables */
@@ -124,7 +134,7 @@ transform: translateY(0);
   left: -25%;
   width: 150%;
   height: 100%;
-  background: #fce38a; /* Adjusted to a static RGBA color */
+  background:#a5e9ca; /* Adjusted to a static RGBA color */
   transition: transform var(--cross-fade-transition-time) ease-in-out;
   z-index: -1;
 }

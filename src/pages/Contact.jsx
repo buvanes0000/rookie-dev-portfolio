@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "@web3forms/react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
@@ -48,6 +49,7 @@ export default function Contact() {
   };
 
   return (
+    <>
     <div className="contact" id="contact">
       <h2>Tell about Yourself</h2>
       <form onSubmit={handleSubmit(handleFormSubmit)}>
@@ -81,5 +83,6 @@ export default function Contact() {
         </div>
       )}
     </div>
+    </>
   );
 }

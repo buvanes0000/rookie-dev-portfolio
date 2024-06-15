@@ -7,7 +7,8 @@
   #portfolio h2 {
     font-size: 2.5rem;
     margin-bottom: 5rem;
-    font-family: "Pacifico", cursive;
+    font-family: "Pacifico", cursive !important;
+ 
   }
   
   @media screen and (max-width: 440px) {
@@ -47,7 +48,7 @@
   
   .project_image {
     width: 300px;
-    height: 400px;
+    height: 300px;
     object-position: center;
     object-fit: cover;
   
@@ -85,7 +86,7 @@
   }
   
   .card-front {
-    background: whitesmoke;
+    background: #a1c6b5;
   }
   
   .tech-list {
@@ -100,7 +101,7 @@
   .card-back {
     padding: 10px;
     transform: rotateY(180deg);
-    background: #eeedeb;
+    background: #c6e9d9;
     font-family: "Kalnia", serif;
     color: #040404;
     display: flex;
@@ -121,9 +122,11 @@
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
     font-weight: bold;
-    color: #ec5a64;
+    color: #0e5836;
     padding: 10px;
     letter-spacing: 2px;
+    position: relative;
+    top: 1rem;
   }
   
   .card:hover .card-inner {
@@ -174,4 +177,6 @@
   .sec_4.show h2 {
     transform: scale(1);
   }
-  
+  .car-animation {
+    margin-top: 6rem;
+  }
