@@ -37,6 +37,7 @@
     @media screen and (max-width: 440px) {
       font-size: 0.8em;
       width: 220px;
+    
     }
   }
   
@@ -179,4 +180,12 @@
   }
   .car-animation {
     margin-top: 6rem;
+  }
+ 
+  @media screen and (max-width: 440px) {
+    .project_animation {
+      margin-top:4rem ;
+
+    }
+  
   }
