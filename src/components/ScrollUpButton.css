@@ -1,21 +1,33 @@
 .scroll-up-btn {
-    position: fixed;
-    height: 3rem;
-    width: 3rem;
-    bottom: 20px;
-    right: 20px;
-    background-color: #d5d5d5;
-    color: #FFBF1A;
-    border: 3px solid #FFBF1A;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1000;
-    transition: opacity 0.3s;
-    font-size: 2rem;
-  }
-  
-  .scroll-up-btn:hover {
-    opacity: 0.8;
-  }
-  
+  position: fixed;
+  height: 4rem;
+  width: 4rem;
+  bottom: 20px;
+  right: 20px;
+  background-color: #3bcb8b;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-up-btn:hover {
+  transform: scale(1.1);
+}
+
+.scroll-up-icon {
+  width: 2rem;
+  height: 2rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.scroll-up-btn:hover .scroll-up-icon {
+  transform: translateY(-5px);
+}

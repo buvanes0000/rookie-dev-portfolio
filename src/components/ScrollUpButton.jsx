@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ScrollUpButton.css';
 
-
 const ScrollUpButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -32,8 +31,20 @@ const ScrollUpButton = () => {
     <div>
       {isVisible && (
         <button className="scroll-up-btn" onClick={scrollToTop}>
-    <i className="fas fa-arrow-up" style={{fontSize:"1.5rem",position:"absolute", marginTop:"-0.75rem",marginLeft:"-0.5rem"}}></i>
-
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="scroll-up-icon"
+          >
+            <path d="M21.21 10.89l-8-8c-.39-.39-1.02-.39-1.41 0l-8 8c-.39.39-.39 1.02 0 1.41l8 8c.39.39 1.02.39 1.41 0l8-8c.39-.38.39-1.01 0-1.41z" />
+            <path d="M12 2v20" />
+            <path d="M7 7l5-5 5 5" />
+          </svg>
         </button>
       )}
     </div>
