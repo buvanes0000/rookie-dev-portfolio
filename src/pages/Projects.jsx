@@ -13,6 +13,7 @@ import womenAnimation from '../assets/spa.json'; // JSON animation file
 import carAnimation from '../assets/car.json'; // JSON animation file
 import socialMedia from '../assets/social-media-influencer.json'; // JSON animation file
 import children from '../assets/childrenreading.json';
+import construction from '../assets/construction.json'; // JSON animation file
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
@@ -24,9 +25,17 @@ const Projects = () => {
       animation: socialMedia,
       description: 'This is My first Freelance multipage react Website for the startup Social media company',
    
-      link: 'https://buvanes0000.github.io/dott_media/',
+      link: 'https://dottmediatn.com',
       tech: [tailwind, js, reactlogo]
     },
+{
+  name:"King Tech Builders",
+  animation: construction,
+  description: 'This is My freelance web project for the startup construction company',
+  link: 'https://kingtechbuilders.com',
+  tech: [tailwind, js, reactlogo]
+},
+
     {
       name: 'CleverBooks',
       animation: children,
